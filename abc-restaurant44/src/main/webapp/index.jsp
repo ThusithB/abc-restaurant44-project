@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -35,7 +36,6 @@
 
     </head>
 <body>
-
 
 
 <!-- Header -->
@@ -252,64 +252,69 @@
 <!-- ------------------- -->
 
 
-<!-- Menu -->
 <div id="menu" class="section">
-  
-  <!-- Background Image -->
-  <div class="bg-image bg-parallax overlay" style="background-image:url(./img/background01.jpg)"></div>
-  <!-- /Background Image -->
 
-  <!-- container -->
-  <div class="container" data-aos="fade-up">
+			<!-- Backgound Image -->
+			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/background01.jpg)"></div>
+			<!-- /Backgound Image -->
 
-    <!-- row -->
-    <div class="row">
+			<!-- container -->
+			<div class="container">
 
-      <!-- header and subtitle -->
-      <div class="section-header text-center">
-        <h4 class="sub-title">Discover</h4>
-        <h2 class="title white-text">Our Menu</h2>
-      </div>
+				<!-- row -->
+				<div class="row">
 
-      <!-- menu nav -->
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="menu-filters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-Breakfast">Breakfast</li>
-            <li data-filter=".filter-Lunch">Lunch</li>
-            <li data-filter=".filter-Dinner">Dinner</li>
-            <li data-filter=".filter-Dessert">Desserts</li>
-            <li data-filter=".filter-Beverages">Beverages</li>
-          </ul>
-        </div>
-      </div>
-      <!-- /menu nav -->
+					<div class="section-header text-center">
+						<h4 class="sub-title">Discover</h4>
+						<h2 class="title white-text">Our Menu</h2>
+					</div>
 
-      <!-- menu content -->
-    <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-      <c:forEach var="product" items="${products}">
-        <div class="col-lg-6 menu-item filter-${product.category}">
-          <img src="${product.imagePath}" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">${product.name}</a><span>Rs ${product.price}</span>
-          </div>
-          <div class="menu-ingredients">
-            ${product.description}
-          </div>
-        </div>
-      </c:forEach>
-    </div>
-      <!-- /menu content -->
+					<!-- menu nav -->
+					<ul class="menu-nav">
+					  <li class="active"><a data-toggle="tab" href="#menu1">Breakfast</a></li>
+					  <li><a data-toggle="tab" href="#menu1">Lunch</a></li>
+					  <li><a data-toggle="tab" href="#menu1">Dinner</a></li>
+					  <li><a data-toggle="tab" href="#menu1">Dessert</a></li>
+					  <li><a data-toggle="tab" href="#menu1">Beverages</a></li>
+					</ul>
+					<!-- /menu nav -->
 
-    </div>
-    <!-- /row -->
+					<!-- menu content -->
+					<div id="menu-content" class="tab-content">
 
-  </div>
-  <!-- /container -->
+						<!-- menu1 -->
+						<div id="menu1" class="tab-pane fade in active">
+							<div class="col-md-6">
 
-</div>
-<!-- /Menu -->
+								<!-- single dish -->
+								<div class="single-dish">
+									<div class="single-dish-heading">
+										<h4 class="name">${product.name}</h4>
+										<h4 class="price"><span>Rs ${product.price}</span></h4>
+									
+										
+									</div>
+									<p>${product.description}</p>
+								</div>
+								
+
+								
+
+							</div>
+
+						</div>
+						<!-- /menu1 -->
+
+					</div>
+					<!-- /menu content -->
+
+				</div>
+				<!-- /row -->
+
+			</div>
+			<!-- /container -->
+
+		</div>
 
 		
 <!-- /------------------- -->
